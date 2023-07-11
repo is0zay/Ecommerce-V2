@@ -1,0 +1,45 @@
+.wrapper {
+	max-width: 100%;
+	display: flex;
+	align-items: center;
+  }
+  
+  .wrapper i {
+	font-size: 3.5vw;
+	color: rgba(255, 255, 255, 0.81);
+	background-color: rgba(0, 0, 0, 0.71);
+	border-radius: 100%;
+	cursor: pointer;
+	position: absolute;
+	margin-left: 1.5%;
+	margin-right: 1.5%;
+  }
+  
+  .wrapper i:first {
+	left: 0;
+  }
+  
+  .wrapper i:last-child {
+	right: 0;
+  }
+  
+  .wrapper,
+  .section3-carousel {
+	white-space: nowrap;
+	overflow: hidden;
+	scroll-behavior: smooth;
+  }
+  
+  .section3-carousel img {
+	width: calc(100% / 3);
+	height: auto;
+	object-fit: cover;
+	cursor: pointer;
+	margin-left: 4px;
+  }
+  
+  .section3-carousel img:first-child {
+	margin-left: 0%;
+  }
+
+  
