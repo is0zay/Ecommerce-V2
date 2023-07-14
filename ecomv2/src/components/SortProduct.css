@@ -1,0 +1,8 @@
+.sort-input {
+	height: 1rem;
+}
+
+.sort-label {
+	display: flex;
+	font-size: .75rem;
+}

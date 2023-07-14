@@ -1,0 +1,118 @@
+.body {
+	width: 100%;
+}
+
+.index-main-shop {
+	height: 100vh;
+	width: 100vw;
+	position: relative;
+	overflow-y: visible;
+	overflow-x: hidden;
+	display: flex;
+  }
+  
+
+.dropdown {
+	width: 15rem;
+	position: relative;
+	margin-top: 7%;
+}
+
+.dropdown * {
+	box-sizing: border-box;
+}
+
+.select {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+}
+
+.shop-grid {
+  margin-top: 8%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 20rem);
+  overflow-x: hidden;
+  gap: 1%;
+
+}
+
+.shop-tile {
+  display: flex;
+  flex-direction: column;
+  width: 19.5rem;
+  height: 28rem;
+  margin-bottom: 1%;
+}
+
+.shop-tile img {
+  height: auto;
+  width: 100%;
+}
+
+.shop-h2 {
+  font-family: "Public Sans", sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.shop-description {
+  font-family: "Public Sans", sans-serif;
+  font-size: 0.7rem;
+  margin-top: 0.5rem;
+}
+
+.ant-collapse {
+	width: 100vw;
+	margin-top: 8%;
+}
+
+.filterSection {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	width: 20vw;
+	margin-top: 8%;
+}
+
+.filterInput-check {
+	height: 1rem;
+}
+
+.filterPrice {
+	height: 1rem;
+	width: 20%;
+}
+
+.sortSection {
+	margin-top: 8%;
+}
+
+@media (max-width: 821px) {
+	.index-main {
+		overflow-x: hidden;
+		overflow-y: scroll;
+	  }
+	
+	
+	.shop-section {
+		margin-top: 5%;
+	  }
+	
+	  .shop-grid {
+		margin-left: 5%;
+	  }
+}
+
+@media (max-width: 660px) {
+	.shop-grid{
+		margin-top: 10%;
+	}
+	.shop-section {
+		margin-top: 15%;
+	 }
+	
+}

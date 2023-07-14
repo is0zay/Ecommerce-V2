@@ -3,7 +3,6 @@ import Home from './pages/Home';
 import Contact from './pages/Contact';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Footer from './components/Footer';
-import Nav from './components/Nav';
 import Shop from './pages/Shop';
 
 function App() {
@@ -23,3 +22,6 @@ function App() {
 }
 
 export default App;
+
+
+

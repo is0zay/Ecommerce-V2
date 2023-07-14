@@ -9,7 +9,7 @@ const Contact = () => {
   return (
 	<div>
 		<Nav />
-		<main className="index-main">
+		
 			<section className="help-1">
 				<h3 className="help-h3">Contact</h3>
 				<div className="contact-grid">
@@ -104,7 +104,7 @@ const Contact = () => {
 				</div>
 			</section>
 
-		</main>
+		
 	</div>
   )
 }

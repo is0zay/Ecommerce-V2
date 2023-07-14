@@ -2,7 +2,7 @@ import { React, useState} from "react";
 import './Nav.css';
 import { Link,NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 
 function Nav() {
 	
@@ -28,7 +28,7 @@ function Nav() {
           <li className="middle-link"><Link to="/"><img src="/images/hglogo.avif" alt="" className="head-logo" /></Link></li>
         </ul>
         <ul className="nav-right">
-          <li><a href="#"><i className="fa-sharp fa-solid fa-bag-shopping"></i></a></li>
+          <li><FontAwesomeIcon icon={faShoppingBag} /></li>
         </ul>
       </nav>
     </div>
