@@ -3,8 +3,8 @@ import './SortProduct.css';
 
 const SortProducts = ({ sortHandler, sortOption }) => {
   return (
-    <div>
-      <h4>Sort Products</h4>
+    <div className='sort'>
+      <h4 className='sort-h4'>Sort Products</h4>
       <label className='sort-label'>
         <input
           type="radio"

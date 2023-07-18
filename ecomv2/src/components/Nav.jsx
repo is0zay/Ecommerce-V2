@@ -7,7 +7,7 @@ import { faBars, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 function Nav() {
 	
 
-	const [isActive, setIsActive] = useState(false);
+const [isActive, setIsActive] = useState(false);
 
   const handleHamburgerClick = () => {
     setIsActive(!isActive);

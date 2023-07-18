@@ -1,8 +1,37 @@
+.sort {
+	font-family: "Public Sans", sans-serif;
+
+}
+
+.sort-h4 {
+	font-size: 1.1rem;
+	font-weight: 800;
+	margin-bottom: 3%;
+}
+
 .sort-input {
 	height: 1rem;
 }
 
 .sort-label {
 	display: flex;
-	font-size: .75rem;
+	font-size: .9rem;
+}
+
+@media (max-width: 821px) {
+	.sort-h4 {
+		font-size: 1.25rem;
+	}
+	.sort-label {
+		display: flex;
+		font-size: 1rem;
+	}
+	
+}
+
+@media (max-width: 660px) {
+	.sort-h4 {
+		font-size: 80%;
+	}
+	
 }

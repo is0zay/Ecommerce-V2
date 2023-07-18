@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&display=swap");
+
+.product-two {
+	display: grid;
+	grid-template-columns: repeat(2, 40vw);
+	margin: 8% 0 ;
+	justify-content: center;
+	align-items: center;
+	gap: 5%;
+	height: 100vh;
+}
+
+.prodImg {
+	width: 100%;
+}
+
+.productH1 {
+	font-size: 3rem;
+	font-weight: 900;
+	font-family: "Public Sans", sans-serif;
+}
+
+.product-h2 {
+	font-family: "Public Sans", sans-serif;
+	font-weight: 600;
+	font-size: 2rem;
+
+}
+
+.product-p {
+	font-family: "Public Sans", sans-serif;
+	font-size: 1.25rem;
+
+}
+
+.product-right {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+@media (max-width: 821px) {
+	.product-two {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.product-left {
+		width: 90vw;
+	}
+
+	.product-right {
+		width: 90vw;
+	}
+}
+
+@media (max-width: 660px) {
+
+	
+}

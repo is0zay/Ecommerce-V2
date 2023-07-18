@@ -3,14 +3,17 @@ import Nav from '../components/Nav';
 import axios from 'axios';
 import './Shop.css';
 import SortProducts from '../components/SortProduct';
+import { Link } from 'react-router-dom';
+
 
 const Shop = () => {
 
-	const [popup, setPopup] = useState(null);
+	const [filterIsActive, setIsActive] = useState(false);
 
-	const openPopup = (product) => {
-		setPopup(product);
-	};
+  const handleFilterClick = () => {
+    setIsActive(!filterIsActive);
+  };
+	
 
 	const [products, setProducts] = useState([]);
 	const [filteredProducts, setFilteredProducts] = useState([]);
@@ -26,7 +29,7 @@ const Shop = () => {
 	useEffect(() => {
 	  const fetchData = async () => {
 		try {
-		  const response = await axios.get('http://localhost:3001/api/products'); // Replace with your API endpoint
+		  const response = await axios.get('http://localhost:3001/api/products'); 
 		  setProducts(response.data);
 		} catch (error) {
 		  console.error(error);
@@ -99,84 +102,93 @@ const Shop = () => {
 			<Nav />
 			<div className='index-main-shop'>
 				<div className='filterSection'>
-					<h2>Filter Products</h2>
+					<h2 className='filter-h2' onClick={handleFilterClick}>Filter Products</h2>
+					<div  className={`${filterIsActive ? 'filter-hide' : 'filter-show'}`}>
 					<div>
-					<label>
-					<input
-						type="checkbox"
-						name="tops"
-						checked={filterOptions.tops}
-						onChange={handleFilterChange}
-						className="filterInput-check"
-					/>
-					Tops
-					</label>
+						<label className="filter-label">
+						<input
+							type="checkbox"
+							name="tops"
+							checked={filterOptions.tops}
+							onChange={handleFilterChange}
+							className="filterInput-check" />
+						Tops
+						</label>
+					</div>
 				
-				<div>
-					<label>
-					<input
-						type="checkbox"
-						name="bottoms"
-						checked={filterOptions.bottoms}
-						onChange={handleFilterChange}
-						className="filterInput-check"
-					/>
-					Bottoms
-					</label>
+					<div>
+						<label className="filter-label">
+						<input
+							type="checkbox"
+							name="bottoms"
+							checked={filterOptions.bottoms}
+							onChange={handleFilterChange}
+							className="filterInput-check"
+						/>
+						Bottoms
+						</label>
+					</div>
+
+					<div>
+						<label className="filter-label">
+						<input
+							type="checkbox"
+							name="accessories"
+							checked={filterOptions.accessories}
+							onChange={handleFilterChange}
+							className="filterInput-check"
+						/>
+						Accessories
+						</label>
+					</div>
+					<div>
+						<label className="filter-label">
+						Price Min:
+						<input
+							type="number"
+							name="priceMin"
+							value={filterOptions.priceMin}
+							onChange={handleFilterChange}
+							className="filterPrice"
+						/>
+						</label>
+					</div>
+					<div>
+						<label className="filter-label">
+						Price Max:
+						<input
+							type="number"
+							name="priceMax"
+							value={filterOptions.priceMax}
+							onChange={handleFilterChange}
+							className="filterPrice"
+						/>
+						</label>
+					</div>
+
+					<div className='sortSection'>
+					<SortProducts sortHandler={handleSortChange}  sortOption={sortOption}/>
+					</div>
+					
 				</div>
-				<div>
-					<label>
-					<input
-						type="checkbox"
-						name="accessories"
-						checked={filterOptions.accessories}
-						onChange={handleFilterChange}
-						className="filterInput-check"
-					/>
-					Accessories
-					</label>
-				</div>
-				<div>
-					<label>
-					Price Min:
-					<input
-						type="number"
-						name="priceMin"
-						value={filterOptions.priceMin}
-						onChange={handleFilterChange}
-						className="filterPrice"
-					/>
-					</label>
-				</div>
-				<div>
-					<label>
-					Price Max:
-					<input
-						type="number"
-						name="priceMax"
-						value={filterOptions.priceMax}
-						onChange={handleFilterChange}
-						className="filterPrice"
-					/>
-					</label>
-				</div>
-				</div>
+				
 				</div>
 			
 		
 				<div className='shop-grid' id='shopGrid'>
 					{filteredProducts.map(product => (
-					<div className='shop-tile' id='shopTile' key={product.id} onClick={() => openPopup(product)}>
-						<img src={product.image} className="productImg" alt={product.description}></img>
-						<h2 className='shop-h2'>{product.name}</h2>
-						<p className='shop-description'>{product.description}</p>
-						<h2 className='shop-h2'>${product.price}</h2> 
-					</div>
+							<div className='shop-tile' id='shopTile' key={product.id} >
+								<Link to={`/shop/${product.id}`}>	
+								<img src={product.image} className="productImg" alt={product.description}></img>
+								<h2 className='shop-h2'>{product.name}</h2>
+								<p className='shop-description'>{product.description}</p>
+								<h2 className='shop-h2'>${product.price}</h2>
+								</Link>	 
+							</div>
+						
 					))}
 				</div>
-				<div className='sortSection'>
-					<SortProducts sortHandler={handleSortChange}  sortOption={sortOption}/>
-				</div>
+				
 			</div>
 			
 		</div>
