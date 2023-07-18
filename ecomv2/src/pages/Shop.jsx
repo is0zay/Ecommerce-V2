@@ -8,15 +8,20 @@ import { Link } from 'react-router-dom';
 
 const Shop = () => {
 
+	  // State to manage the visibility of the filter section
 	const [filterIsActive, setIsActive] = useState(false);
-
+  
+	// Function to handle the click on the filter heading
   const handleFilterClick = () => {
     setIsActive(!filterIsActive);
   };
 	
-
+  
+  // State to store and track  all products and filtered products
 	const [products, setProducts] = useState([]);
 	const [filteredProducts, setFilteredProducts] = useState([]);
+
+	  // State to store and track filter options and sorting option
 	const [filterOptions, setFilterOptions] = useState({
 	  tops: false,
 	  bottoms: false,
@@ -26,6 +31,7 @@ const Shop = () => {
 	});
 	const [sortOption, setSortOption] = useState('');
   
+	  // Fetch products data from the server using axios
 	useEffect(() => {
 	  const fetchData = async () => {
 		try {
@@ -39,6 +45,7 @@ const Shop = () => {
 	  fetchData();
 	}, []);
   
+	  // Apply filters to the products based on filterOptions
 	useEffect(() => {
 	  const applyFilters = () => {
 		let filtered = products;
@@ -66,6 +73,7 @@ const Shop = () => {
 	  applyFilters();
 	}, [filterOptions, products]);
   
+	  // Sort filtered products based on sortOption
 	useEffect(() => {
 	  const sortProducts = () => {
 		let sorted = [...filteredProducts];
@@ -82,6 +90,7 @@ const Shop = () => {
 	  sortProducts();
 	}, [sortOption]);
   
+	  // Handle changes in filter options
 	const handleFilterChange = event => {
 	  const { name, value, type, checked } = event.target;
 	  const newValue = type === 'checkbox' ? checked : value;
@@ -92,6 +101,7 @@ const Shop = () => {
 	  }));
 	};
   
+	  // Handle changes in the sorting option
 	const handleSortChange = event => {
 	  setSortOption(event.target.value);
 	};

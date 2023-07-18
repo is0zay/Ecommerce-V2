@@ -5,7 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 
 function Nav() {
-	
+
+// isActive orginal set to false using useState
+// handleHamburgerClick gives us the logic to set the state of isActive to true
+// pass the function to the hamburger button through onClick 
 
 const [isActive, setIsActive] = useState(false);
 

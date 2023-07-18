@@ -30,5 +30,8 @@ function App() {
 
 export default App;
 
+// Use BrowserRouter to set up the file paths used in the navbar
+// Future plan to use CartProvider component to store information to the cart
+
 
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import './SortProduct.css';
 
+//  two props: sortHandler and sortOption.
+// Logic will use the props and be set i nexternal component
 const SortProducts = ({ sortHandler, sortOption }) => {
   return (
     <div className='sort'>
