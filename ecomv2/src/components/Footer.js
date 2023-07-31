@@ -17,7 +17,7 @@ function Footer() {
 				</ul>
 
 				<ul class="foot-list-vert">
-					<li><a href="/contact" class="footer-link1">GET HELP</a></li>
+					<li><a href="/contact" class="footer-link1 test-footer">GET HELP</a></li>
 					<li><a href="#" class="footer-link2">Order Status</a></li>
 					<li><a href="#" class="footer-link2">Shipping and Delivery</a></li>
 					<li><a href="#" class="footer-link2">Returns</a></li>

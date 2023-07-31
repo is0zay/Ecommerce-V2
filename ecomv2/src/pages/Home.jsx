@@ -11,7 +11,7 @@ const Home = () => {
 		<div className="index-main">
 			
 			<section className="hero1">
-				<h2 className="hero1-h2">HomeXGrown</h2>
+				<h2 className="hero1-h2" data-testid="home-title">HomeXGrown</h2>
 				<p className="hero1-p1">"Rooted in faith, true to who we are"</p>
 				<Link to="/shop" className="shop-btn1">Shop</Link>  
 			</section>
